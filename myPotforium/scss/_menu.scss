@@ -1,0 +1,112 @@
+.menu-btn{
+    position: absolute;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    top: em(20px);
+    right: em(20px);
+    cursor: pointer;
+    display: none; 
+    @include transition;
+    -webkit-tap-highlight-color: transparent;
+    
+
+    &__burger{
+        position: absolute;
+        top: em(12px);
+        right: 0;
+        width: em(30px);
+        height: 4px;
+        background-color:#fff;
+        border-radius: 5px;
+        @include transition;
+    
+        &::before{
+            content: "";
+            position: absolute;
+            top: em(-12px);
+            width: em(30px);
+            height: 4px;
+            background-color:#fff;
+            border-radius: 5px;
+            @include transition; 
+        }
+    
+        &::after{
+            content: "";
+            position: absolute;
+            top: em(12px);
+            width: em(20px);
+            height: 4px;
+            background-color:#fff;
+            border-radius: 5px;
+            @include transition;
+        }
+    
+        &.open {
+            transform: rotate(720deg);
+            background-color: transparent;
+                
+            &::before {
+                width: 30px;
+                transform: rotate(45deg) translate(8px, 7px); 
+            }
+          
+            &::after {
+                width: 30px;
+                transform: rotate(-45deg) translate(10px, -9px);  
+            }
+        }
+    }
+}
+    
+
+
+.nav{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%; 
+   
+    
+    
+    .menu-nav{
+        float: right;
+        list-style-type: none;
+        @include transition;
+
+     
+        &-item{
+            display:inline-block;
+            list-style-type: none;
+            text-transform: uppercase;
+            padding: em(15px) em(25px);
+            letter-spacing:2px;
+            word-spacing:5px;
+
+            &.active > a {
+                color: $active-page;
+                font-size: em(22px);
+            }
+            
+        }
+
+        &-link{
+            color: white;
+            text-decoration: none;
+            font-size: em(20px);
+            line-height: em(2px); 
+            border-bottom: 2px solid transparent;
+            @include transition;
+            
+
+            &:hover{
+                @include  border;
+                @include transition;
+            }
+     
+        }
+    }
+}
+
+

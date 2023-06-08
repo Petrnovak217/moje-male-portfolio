@@ -1,0 +1,28 @@
+.about{
+    &__bio-images{
+        @include bio-image;
+
+        h2{
+            @include bio-image-name
+          }
+    }
+
+    &__info{
+        color: rgba(226, 221, 221, 0.959);
+        font-size: em(20px);
+        .title{
+            @include title;
+            
+            &__text{
+                padding: $title-text-padding;
+                line-height: 25px;
+               
+                &-description{
+                    line-height: 25px;
+                    padding: $title-text-padding;
+                    padding-bottom: 50px;
+                }
+            }
+        }
+    }
+}

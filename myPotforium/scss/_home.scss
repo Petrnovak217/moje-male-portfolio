@@ -1,0 +1,22 @@
+
+.home{
+    @include background-page;
+
+    &_description{
+        font-size: em(30px);
+        padding: em(10px);
+        letter-spacing: 1px;
+
+    }
+
+    &__name{
+        font-size: em(75px);
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        @include  border;
+
+        &-last{
+            color: $secondary-color;
+        }
+    }
+}

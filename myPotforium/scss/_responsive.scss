@@ -1,0 +1,164 @@
+@include largeScreen{
+  .home{
+    .home{
+      &_description{
+        font-size: em(45px);
+      }
+  
+      &__name{
+        font-size:em(120px);
+        padding: 0 5px;
+      }
+    }
+  }
+}
+
+
+
+@include mediaScreen{
+  
+    .menu-btn{
+        display: block;
+        z-index: 200;
+    }
+    .nav{
+        width: 100vw;
+        z-index: 100;
+        
+        
+        &.open{
+        display:block;
+        }
+    }
+
+    .menu-nav{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        background-color: $bg-color;
+        transform: translateX(100%);
+
+        &.open{ 
+          transform: translateX(0);
+        }
+
+        &-item{
+          font-size:25px; 
+          transform: translateY(100vw);
+          @include transition;
+      
+          &.open{
+            transform: translateY(0);
+          }
+        }
+    }
+
+    .projects{
+
+        .theme{  
+            @include resthemebox;   
+        }
+        &__item{
+          margin: 10px 18px;
+          
+            img {
+              width: 100%;
+              } 
+
+            &::after{      
+              top: 0;
+              opacity: 0.6;
+            }
+        }
+
+        &-btns{ 
+          &.open{
+            z-index: 20;
+          }
+        }
+
+        .btn{
+          opacity: 1;
+          font-size: 20px;
+          padding: 5px;
+          color: white;
+          cursor: pointer;
+    }      
+  }
+}
+
+@include smallScreen{
+
+  .menu-nav{ 
+    &-item{
+      font-size:17px; 
+    }
+}
+
+  .home{
+    &_description{
+      font-size: em(24px);
+    }
+
+    &__name{
+      font-size:em(53px);
+      padding: 0 5px;
+    }
+  }
+
+  .projects{
+
+    &__bio-images{
+      margin-bottom:20px ;
+        h2{
+          @include bio-image-name-respon;
+        }
+      }
+    
+    &__item{
+      margin:10px;
+
+      img{
+        height: 220px;
+      }
+    }
+
+    .btn{
+      font-size: 15px;
+      padding: 2px;
+    }
+  }
+
+  .about{
+    &__bio-images{
+
+        h2{
+          font-size: 35px;
+      }
+    }
+  }
+
+  .contact{ 
+    padding:19vh; 
+
+    &__list{
+      font-size: em(20px);
+    }
+
+    .text-secondary{
+
+        p{
+            font-size: em(21px);  
+      }
+    }
+  } 
+
+}
+
+
+
+  
+
